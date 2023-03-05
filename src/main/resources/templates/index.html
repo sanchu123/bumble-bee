@@ -168,6 +168,11 @@ body {
 	  <nav class="navbar navbar-expand-md navbar-light bg-white">
 	    <div class="container-fluid p-0"> <a class="navbar-brand text-uppercase fw-800" href="#"><span class="border-red pe-2">Bumble</span>Bee</a> <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#myNav" aria-controls="myNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="fas fa-bars"></span> </button>
 	      <div class="collapse navbar-collapse" id="myNav">
+			  <div class="navbar-nav ms-auto"> 
+		        	<a class="nav-link active" aria-current="page" href="/">Products</a> 
+		        	<a class="nav-link" href="/pages/register">Register</a> 
+		        	<a class="nav-link" href="/pages/admin">login</a> 
+	        	</div>
 	      </div>
 	    </div>
 	  </nav>
@@ -179,16 +184,7 @@ body {
   <script>
   		var URL = "[[${URL}]]";
   		var token = localStorage.getItem('token');
-  		if(token){
-			  $('#myNav').html(`<div class="navbar-nav ms-auto"> 
-				        	<a class="nav-link active" aria-current="page" href="/">Products</a> 
-			        	</div>`);
-	 	}else{
-			 $('#myNav').html(`<div class="navbar-nav ms-auto"> 
-				        	<a class="nav-link active" aria-current="page" href="/">Products</a> 
-				        	<a class="nav-link" href="/pages/register">Register</a> 
-			        	</div>`);
-		}
+  		
 		$.ajax({
 	         url: URL + '/products',
 	         type: 'GET',
